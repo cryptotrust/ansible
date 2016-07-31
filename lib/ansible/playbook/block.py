@@ -213,8 +213,8 @@ class Block(Base, Become, Conditional, Taggable):
 
         if self._role is not None:
             data['role'] = self._role.serialize()
-        if self._task_include is not None:
-            data['task_include'] = self._task_include.serialize()
+        #if self._task_include is not None:
+        #    data['task_include'] = self._task_include.serialize()
         if self._parent_block is not None:
             data['parent_block'] = self._parent_block.copy(exclude_tasks=True).serialize()
 

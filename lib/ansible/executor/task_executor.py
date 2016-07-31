@@ -246,7 +246,7 @@ class TaskExecutor:
             task_vars[loop_var] = item
 
             try:
-                tmp_task = self._task.copy()
+                tmp_task = self._task.copy(exclude_block=True)
                 tmp_play_context = self._play_context.copy()
             except AnsibleParserError as e:
                 results.append(dict(failed=True, msg=to_unicode(e)))
